@@ -62,10 +62,10 @@ Actual time needed to complete: 15 minutes
 
 Number and name of feature: Feature #2: Allow Users to Favorite Individual Beasts
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 30 minutes
 
-Start time: _____
+Start time: 10:15am
 
-Finish time: _____
+Finish time: 11:00am
 
-Actual time needed to complete: _____
+Actual time needed to complete: 45 min

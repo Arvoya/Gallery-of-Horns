@@ -3,11 +3,6 @@ import HornedBeast from "./HornedBeast";
 import hornedbeastsData from "../assets/hornedbeastsData.json"
 
 class Gallery extends React.Component {
-
-  constructor (props) {
-    super(props);
-    
-  }
   
   render () {
     let hornedBeasts = []
