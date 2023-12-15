@@ -69,3 +69,13 @@ Start time: 10:15am
 Finish time: 11:00am
 
 Actual time needed to complete: 45 min
+
+Number and name of feature: Feature 3: Bootstrap
+
+Estimate of time needed to complete: 30 minutes
+
+Start time: 3:30pm
+
+Finish time: 4:05pm
+
+Actual time needed to complete: 35min
