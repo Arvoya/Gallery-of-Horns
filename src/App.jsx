@@ -4,16 +4,8 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx'
 import Gallery from './components/Gallery.jsx'
 import hornedbeastsData from "./assets/hornedbeastsData.json"
-
-/*
-TODO: Send a function into your Gallery component that allows the user to update state in the App
-DONE: create state in constructor to take in beastID value.
-DONE: pass the function to update the beastID value as a prop to the Gallery component
-DONE: create a button in Gallery component to use the function to share the beastID value
-DONE: use the onClick attribute within the button to use the function.
-TODO: Create SelectedBeast component and include it your App
-TODO: Use the state in the App to render an individual beast in a Modal in the SelectedBeast component using React Bootstrap
-*/
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 class App extends React.Component {
 
@@ -21,12 +13,31 @@ class App extends React.Component {
     super();
     this.state = {
       beastID: null,
+      showModal: false,
+      foundBeast: {},
     }
   }
 
   updateBeastID = (beastNum) => {
     this.setState({
       beastID: beastNum
+    })
+    this.findBeast(beastNum)
+  }
+
+  toggleModal = () => {
+    this.setState({
+      showModal: !this.state.showModal,
+    })
+  }
+
+  findBeast = (beastNum) => {
+    hornedbeastsData.forEach(element => {
+      if (element._id === beastNum) {
+        this.setState({
+          foundBeast: element
+        })
+      }
     })
   }
 
@@ -35,11 +46,41 @@ class App extends React.Component {
     return (
       <>
       <Header />
-      <Gallery beastData={hornedbeastsData} updateBeastID={this.updateBeastID}/>
+      <Gallery beastData={hornedbeastsData} updateBeastID={this.updateBeastID} userClick={this.toggleModal}/>
+      <SelectedBeast showModal={this.state.showModal} toggleModal={this.toggleModal} currentBeast={this.state.foundBeast}/>
       <Footer />
     </>
   )
   }
 }
+
+class SelectedBeast extends React.Component {
+
+  
+  render(){
+
+    
+    return (
+      <>
+
+      <Modal show={this.props.showModal} onHide={this.props.toggleModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>{this.props.currentBeast.title}</Modal.Title>
+        </Modal.Header>
+          <img src={this.props.currentBeast.image_url} alt={this.props.currentBeast.description} width="500px" />
+        <Modal.Body>{this.props.currentBeast.description}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={this.props.toggleModal}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      </>
+    );
+  }
+}
+
+
+
 
 export default App
