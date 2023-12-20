@@ -48,7 +48,7 @@ List versioned releases.
 
 List collaborators here.
 
-## Log
+## Lab: Class02 Log
 
 Number and name of feature: Feature #1: Display Images
 
@@ -60,6 +60,8 @@ Finish time: 11:15pm
 
 Actual time needed to complete: 15 minutes
 
+---
+
 Number and name of feature: Feature #2: Allow Users to Favorite Individual Beasts
 
 Estimate of time needed to complete: 30 minutes
@@ -70,7 +72,9 @@ Finish time: 11:00am
 
 Actual time needed to complete: 45 min
 
-Number and name of feature: Feature 3: Bootstrap
+---
+
+Number and name of feature: Feature #3: Bootstrap
 
 Estimate of time needed to complete: 30 minutes
 
@@ -79,3 +83,15 @@ Start time: 3:30pm
 Finish time: 4:05pm
 
 Actual time needed to complete: 35min
+
+## Lab: Class03 Log
+
+Number and name of feature: Feature #1: Display a Modal
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 1:40pm
+
+Finish time: 2:37pm
+
+Actual time needed to complete: 57 minutes
