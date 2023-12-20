@@ -19,6 +19,7 @@ class Gallery extends React.Component {
             description={data.description}
             keyword={data.keyword}
             horns={data.horns}/>
+            <button onClick={() => {this.props.updateBeastID(data._id)}}>More Info</button>
           </Col>
           ))}
         </Row>
