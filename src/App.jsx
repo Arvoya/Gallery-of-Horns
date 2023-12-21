@@ -4,8 +4,7 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx'
 import Gallery from './components/Gallery.jsx'
 import hornedbeastsData from "./assets/hornedbeastsData.json"
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import SelectedBeast from './components/SelectedBeasts.jsx';
 
 class App extends React.Component {
 
@@ -51,32 +50,6 @@ class App extends React.Component {
       <Footer />
     </>
   )
-  }
-}
-
-class SelectedBeast extends React.Component {
-
-  
-  render(){
-
-    
-    return (
-      <>
-
-      <Modal show={this.props.showModal} onHide={this.props.toggleModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>{this.props.currentBeast.title}</Modal.Title>
-        </Modal.Header>
-          <img src={this.props.currentBeast.image_url} alt={this.props.currentBeast.description} width="500px" />
-        <Modal.Body>{this.props.currentBeast.description}</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={this.props.toggleModal}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
-      </>
-    );
   }
 }
 
