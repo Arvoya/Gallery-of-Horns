@@ -14,6 +14,7 @@ class App extends React.Component {
       beastID: null,
       showModal: false,
       foundBeast: {},
+      searchedBeast: undefined,
     }
   }
 
@@ -40,12 +41,25 @@ class App extends React.Component {
     })
   }
 
+  searchedBeast = (value) => {
+    if (value === '') {
+      this.setState ( {
+        searchedBeast: undefined
+      })
+    } else {
+      let newValue = Number(value)
+      this.setState ( {
+        searchedBeast: newValue
+      } )
+    }
+  }
+
   render() {
 
     return (
       <>
-      <Header />
-      <Gallery beastData={hornedbeastsData} updateBeastID={this.updateBeastID} userClick={this.toggleModal}/>
+      <Header searchedBeast={this.searchedBeast}/>
+      <Gallery beastData={hornedbeastsData} updateBeastID={this.updateBeastID} userClick={this.toggleModal} searchedBeast= {this.state.searchedBeast}/>
       <SelectedBeast showModal={this.state.showModal} toggleModal={this.toggleModal} currentBeast={this.state.foundBeast}/>
       <Footer />
     </>
