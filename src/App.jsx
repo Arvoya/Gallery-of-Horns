@@ -58,7 +58,7 @@ class App extends React.Component {
 
     return (
       <>
-      <Header searchedBeast={this.searchedBeast}/>
+      <Header beastData = {hornedbeastsData} searchedBeast={this.searchedBeast}/>
       <Gallery beastData={hornedbeastsData} updateBeastID={this.updateBeastID} userClick={this.toggleModal} searchedBeast= {this.state.searchedBeast}/>
       <SelectedBeast showModal={this.state.showModal} toggleModal={this.toggleModal} currentBeast={this.state.foundBeast}/>
       <Footer />
